@@ -1,9 +1,10 @@
-import Navbar from "./components/Navbar";
-
+import Navigacija from "./components/Navigacija";
+import OpisKviza from "./components/OpisKviza";
 function App() {
   return (
     <div className="App">
-      <Navbar></Navbar>
+      <Navigacija></Navigacija>
+      <OpisKviza></OpisKviza>
     </div>
   );
 }
