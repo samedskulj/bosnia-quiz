@@ -8,7 +8,6 @@
 }
 .opis_kviza_h2 {
   font-weight: 800;
-
   width: 90%;
   font-size: 3rem;
 }
@@ -37,4 +36,27 @@
 .login_se_btn {
   width: 50%;
   margin-left: 20px;
+}
+
+@media only screen and (max-width: 768px) {
+  .opis_kviza {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    height: 110vh;
+  }
+  .opis_kviza_div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-left: 0;
+  }
+  .opis_kviza img {
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+  }
 }

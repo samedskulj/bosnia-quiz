@@ -3,6 +3,7 @@ import "./OsobineTestova.css";
 import historijaIlustracija from "../slike/undraw_in_thought_gjsf.png";
 import znanjeIlustracija from "../slike/undraw_exams_g4ow.png";
 import sportIlustracija from "../slike/undraw_basketball_agx4.png";
+import { motion } from "framer-motion";
 const OsobineTestova = () => {
   return (
     <>
@@ -11,7 +12,9 @@ const OsobineTestova = () => {
           <div className="osobine_testova_historija">
             <img src={historijaIlustracija}></img>
             <div className="osobine_testova_podaci_historija">
-              <h2>Historija est magistra vitae</h2>
+              <h2 class="animate_animated animate__bounce">
+                Historija est magistra vitae
+              </h2>
               <p>
                 Svi živimo u sadašnjosti i planiramo budućnost - ali kako
                 razumjeti kamo idemo i kako izgleda napredak? Da biste tačno

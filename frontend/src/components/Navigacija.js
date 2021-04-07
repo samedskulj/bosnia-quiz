@@ -1,20 +1,29 @@
 import React, { useState } from "react";
 import "./Navbar.css";
-
+import { Link } from "react-router-dom";
 import { Navbar, NavDropdown, Nav, Button } from "react-bootstrap";
-
+import KontaktPodaci from "../components/Kontakt podaci/KontaktPodaci";
 const Navigacija = () => {
-  const [showNavNoToggler, setShowNavNoToggler] = useState(false);
+  const [show, setShow] = useState(false);
+  const handleShow = () => setShow(true);
+  const handleClose = () => setShow(false);
   return (
     <>
       <Navbar bg="white" expand="lg" className="navbar_header">
-        <Navbar.Brand href="#home">lahko.ba</Navbar.Brand>
+        <Link to="/">
+          <Navbar.Brand href="#home">lahko.ba</Navbar.Brand>
+        </Link>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav" className="justify-content-end">
           <Nav className="navbar_linkovi">
-            <Nav.Link href="#home">Početna stranica</Nav.Link>
-            <Nav.Link href="#link">O kvizu</Nav.Link>
-            <Nav.Link href="#link">Kontakt</Nav.Link>
+            <Link id="navbar_početna_stranica" to="/">
+              <Nav.Link id="navlink" href="#link">
+                Početna stranica
+              </Nav.Link>
+            </Link>
+            <Nav.Link href="#link" onClick={handleShow}>
+              <KontaktPodaci></KontaktPodaci>
+            </Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Navbar>

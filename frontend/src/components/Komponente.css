@@ -3,7 +3,6 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 100%;
 }
 .komponente h2 {
   font-weight: 800;
@@ -28,4 +27,47 @@
 .komponente_ach2 p {
   text-align: left;
   padding-top: 10px;
+}
+@media only screen and (max-width: 768px) {
+  .komponente {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .komponente_div {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .komponente_div h2 {
+    width: 90%;
+  }
+  #komponente_div_prvi_p {
+    width: 90%;
+  }
+  .komponente img {
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+  }
+  .komponente_ach {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-right: 0;
+  }
+  .komponente_ach1,
+  .komponente_ach2 {
+    font-size: 0.9rem;
+    width: 200px;
+    margin-right: 0;
+    text-align: center;
+  }
 }

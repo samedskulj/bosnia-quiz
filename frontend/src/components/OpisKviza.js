@@ -8,7 +8,7 @@ const OpisKviza = () => {
       <main className="opis_kviza">
         <div className="opis_kviza_div">
           <h2 className="opis_kviza_h2">
-            Mislis da znas o svojoj drzavi? <br></br> Što se ne testiras?
+            Misliš da znaš o svojoj državi? <br></br> Što se ne testiraš?
           </h2>
           <p className="opis_kviza_p">
             lahko.ba je web aplikacija na kojoj možete da testirate svoje znanje
