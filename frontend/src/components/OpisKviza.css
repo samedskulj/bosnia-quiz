@@ -1,8 +1,40 @@
 .opis_kviza {
   width: 100%;
   height: 80vh;
-  background-color: red;
+  background-color: transparent;
   display: flex;
   justify-content: space-around;
   align-items: center;
+}
+.opis_kviza_h2 {
+  font-weight: 800;
+
+  width: 90%;
+  font-size: 3rem;
+}
+.opis_kviza img {
+  height: 100%;
+}
+.opis_kviza_p {
+  font-weight: 300;
+
+  width: 90%;
+  font-size: 1.2rem;
+}
+.opis_kviza_div {
+  margin-left: 50px;
+}
+.opis_kviza_btn {
+  width: 40%;
+  margin-top: 30px;
+  display: flex;
+  justify-content: space-between;
+  margin-right: 10px;
+}
+.registruj_se_btn {
+  width: 50%;
+}
+.login_se_btn {
+  width: 50%;
+  margin-left: 20px;
 }

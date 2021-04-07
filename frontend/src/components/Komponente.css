@@ -1,0 +1,31 @@
+.komponente {
+  height: 50vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+.komponente h2 {
+  font-weight: 800;
+  font-size: 3rem;
+}
+.komponente img {
+  height: 100%;
+}
+.komponente_div {
+  margin-left: 50px;
+}
+.komponente_ach {
+  display: flex;
+  margin-top: 50px;
+}
+.komponente_ach1,
+.komponente_ach2 {
+  margin-right: 100px;
+  width: 30%;
+}
+.komponente_ach1 p,
+.komponente_ach2 p {
+  text-align: left;
+  padding-top: 10px;
+}

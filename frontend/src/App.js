@@ -1,10 +1,10 @@
 import Navigacija from "./components/Navigacija";
 import OpisKviza from "./components/OpisKviza";
+import PočetnaStranica from "./PočetnaStranica";
 function App() {
   return (
     <div className="App">
-      <Navigacija></Navigacija>
-      <OpisKviza></OpisKviza>
+      <PočetnaStranica></PočetnaStranica>
     </div>
   );
 }
