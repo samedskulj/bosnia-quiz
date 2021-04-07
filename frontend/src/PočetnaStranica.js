@@ -3,6 +3,8 @@ import OpisKviza from "./components/OpisKviza";
 import Navigacija from "./components/Navigacija";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Komponente from "./components/Komponente";
+import OsobineTestova from "./components/OsobineTestova";
+import LičniPodaci from "./components/LičniPodaci";
 const PočetnaStranica = () => {
   return (
     <div>
@@ -11,14 +13,12 @@ const PočetnaStranica = () => {
         <Switch>
           <Route exact path="/">
             <OpisKviza></OpisKviza>
-            <hr
-              style={{
-                width: "80%",
-                marginLeft: "auto",
-                marginRight: "auto",
-              }}
-            ></hr>
+
             <Komponente></Komponente>
+
+            <OsobineTestova></OsobineTestova>
+
+            <LičniPodaci></LičniPodaci>
           </Route>
           <Route path="/infokviz"></Route>
         </Switch>

@@ -13,8 +13,8 @@ const OpisKviza = () => {
           <p className="opis_kviza_p">
             lahko.ba je web aplikacija na kojoj možete da testirate svoje znanje
             o domovini. <br></br>Kviz je odrađen tako da bude lagan, dok u isto
-            vrijeme može biti zahtjevan, u zavisnosti od Vašeg znanja. <br></br>
-            Odradi kviz, i testiraj svoje znanje!
+            vrijeme može biti zahtjevan, u zavisnosti od Vašeg znanja. Odradi
+            kviz, i testiraj svoje znanje!
           </p>
           <div className="opis_kviza_btn">
             <MDBBtn color="dark" className="registruj_se_btn">

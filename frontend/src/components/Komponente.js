@@ -14,14 +14,14 @@ const Komponente = () => {
             da pokažete svima koliko volite svoju državu.
             <div className="komponente_ach">
               <div className="komponente_ach1">
-                <MDBIcon className="ms-1" icon="star" far size="3x" />
+                <MDBIcon className="ms-1" icon="star" far size="2x" />
                 <p>
                   Za svaki dobro odrađen test kviza, dobijate nagrade! Potrudite
                   se da skupite što više trofeja
                 </p>
               </div>
               <div className="komponente_ach2">
-                <MDBIcon className="ms-1" icon="sync" fas size="3x" />
+                <MDBIcon className="ms-1" icon="sync" fas size="2x" />
                 <p>
                   Ukoliko niste dobro odradili kviz, imate priliku da ponovite
                   isti. Nemojte se predavati!

@@ -1,0 +1,41 @@
+.osobinetestova {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.osobine_testova_div {
+  display: flex;
+  flex-direction: column;
+  margin-left: 50px;
+}
+.osobine_testova_div img {
+  height: 10%;
+  width: 30%;
+}
+.osobine_testova_historija,
+.osobine_testova_znanje,
+.osobine_testova_sport {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin-left: auto;
+  margin-right: auto;
+  width: 96%;
+  text-align: left;
+}
+.osobine_testova_podaci_znanje,
+.osobine_testova_podaci_historija,
+.osobine_testova_podaci_sport {
+  width: 23%;
+}
+.osobine_testova_podaci_znanje,
+.osobine_testova_podaci_historija,
+.osobine_testova_podaci_sport p {
+  font-size: 1.2rem;
+}
+.osobine_testova_podaci_znanje h2,
+.osobine_testova_podaci_historija h2,
+.osobine_testova_podaci_sport h2 {
+  font-weight: 800;
+  font-size: 3rem;
+}
