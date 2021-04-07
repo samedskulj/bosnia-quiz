@@ -1,4 +1,46 @@
 .ličnipodaci {
-  height: 80vh;
+  height: 60vh;
   background-color: #343a40;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.ličnipodaci_div {
+  width: 500px;
+
+  text-align: center;
+  color: white;
+}
+.ličnipodaci_div p {
+  font-size: 1rem;
+}
+.ličnipodaci_div h2 {
+  font-weight: 800;
+  font-size: 3rem;
+}
+#ličnipodaci_fakultet {
+  margin-top: -22px;
+}
+#ličnipodaci_fakultet {
+  font-weight: 100;
+}
+#ličnipodaci_ime {
+  font-size: 2.5rem;
+}
+#ličnipodaci_nauči {
+  color: white;
+  font-size: 0.7rem;
+}
+.ličnipodaci_copyright {
+  width: 100%;
+  background-color: #4a525a;
+  color: white;
+  height: 200px;
+  display: flex;
+  justify-content: center;
+}
+.ličnipodaci_copyright p {
+  margin-top: 25px;
+  font-size: 2rem;
 }

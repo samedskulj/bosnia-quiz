@@ -1,5 +1,6 @@
 .navbar_header {
   width: 100%;
+  position: fixed;
 }
 .navbar_linkovi {
   display: flex;
@@ -11,4 +12,7 @@
 .navbar_linkovi > li {
   list-style: none;
   cursor: pointer;
+}
+#ličnipodaci_fakultet {
+  margin-top: -15px;
 }

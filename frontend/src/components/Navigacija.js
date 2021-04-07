@@ -7,7 +7,7 @@ const Navigacija = () => {
   const [showNavNoToggler, setShowNavNoToggler] = useState(false);
   return (
     <>
-      <Navbar bg="transparent" expand="lg" className="navbar_header">
+      <Navbar bg="white" expand="lg" className="navbar_header">
         <Navbar.Brand href="#home">lahko.ba</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav" className="justify-content-end">
