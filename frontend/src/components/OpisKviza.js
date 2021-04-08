@@ -2,6 +2,7 @@ import React from "react";
 import "./OpisKviza.css";
 import prvaIlustracija from "../slike/undraw_Questions_re_1fy7.png";
 import { MDBBtn } from "mdb-react-ui-kit";
+import { Link } from "react-router-dom";
 const OpisKviza = () => {
   return (
     <>
@@ -21,7 +22,9 @@ const OpisKviza = () => {
               Registruj se!
             </MDBBtn>
             <MDBBtn outline color="dark" className="login_se_btn">
-              Uloguj se!
+              <Link id="login_se_btn_link" to="/login">
+                Uloguj se!
+              </Link>
             </MDBBtn>
           </div>
         </div>

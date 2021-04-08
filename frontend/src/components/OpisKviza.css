@@ -36,8 +36,12 @@
 .login_se_btn {
   width: 50%;
   margin-left: 20px;
+  text-decoration: none;
 }
-
+#login_se_btn_link {
+  text-decoration: none;
+  color: black;
+}
 @media only screen and (max-width: 768px) {
   .opis_kviza {
     display: flex;
