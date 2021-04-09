@@ -7,6 +7,7 @@ import OsobineTestova from "./components/OsobineTestova";
 import LičniPodaci from "./components/LičniPodaci";
 import KontaktPodaci from "./components/Kontakt podaci/KontaktPodaci";
 import Login from "./components/Login/Login";
+import Registracija from "./components/Registracija/Registracija";
 const PočetnaStranica = () => {
   const [showNavNoToggler, setShowNavNoToggler] = useState(false);
   return (
@@ -22,6 +23,9 @@ const PočetnaStranica = () => {
           </Route>
           <Route path="/login">
             <Login></Login>
+          </Route>
+          <Route path="/registracija">
+            <Registracija></Registracija>
           </Route>
         </Switch>
       </Router>

@@ -3,13 +3,14 @@ import "./Navbar.css";
 import { Link } from "react-router-dom";
 import { Navbar, NavDropdown, Nav, Button } from "react-bootstrap";
 import KontaktPodaci from "../components/Kontakt podaci/KontaktPodaci";
+import "bootstrap/dist/css/bootstrap.min.css";
 const Navigacija = () => {
   const [show, setShow] = useState(false);
   const handleShow = () => setShow(true);
   const handleClose = () => setShow(false);
   return (
     <>
-      <Navbar bg="white" expand="lg" className="navbar_header">
+      <Navbar bg="transparent" expand="lg" className="navbar_header">
         <Link to="/">
           <Navbar.Brand href="#home">lahko.ba</Navbar.Brand>
         </Link>

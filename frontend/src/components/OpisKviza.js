@@ -18,14 +18,16 @@ const OpisKviza = () => {
             kviz, i testiraj svoje znanje!
           </p>
           <div className="opis_kviza_btn">
-            <MDBBtn color="dark" className="registruj_se_btn">
-              Registruj se!
-            </MDBBtn>
-            <MDBBtn outline color="dark" className="login_se_btn">
-              <Link id="login_se_btn_link" to="/login">
+            <Link id="registruj_se_btn_link" to="/registracija">
+              <MDBBtn color="dark" className="registruj_se_btn">
+                Registruj se!
+              </MDBBtn>
+            </Link>
+            <Link id="login_se_btn_link" to="/login">
+              <MDBBtn outline color="dark" className="login_se_btn">
                 Uloguj se!
-              </Link>
-            </MDBBtn>
+              </MDBBtn>
+            </Link>
           </div>
         </div>
         <img src={prvaIlustracija}></img>

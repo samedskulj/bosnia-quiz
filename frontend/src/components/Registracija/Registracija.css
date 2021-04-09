@@ -1,16 +1,16 @@
-.login_screen {
+.registracija_screen {
   height: 100vh;
   justify-content: center;
   align-items: center;
   display: flex;
 }
-.login_screen_div_slika {
+.registracija_screen_div_slika {
   height: 600px;
   width: 700px;
-  content: url("../../slike/nguyen-dang-hoang-nhu-qDgTQOYk6B8-unsplash.jpg");
+  content: url("../../slike/green-chameleon-s9CC2SKySJM-unsplash.jpg");
   object-fit: cover;
 }
-.login_screen_div {
+.registracija_screen_div {
   width: 400px;
   height: 600px;
   background-color: white;
@@ -20,11 +20,11 @@
   flex-direction: column;
   justify-content: center;
 }
-.login_screen_div p {
+.registracija_screen_div p {
   font-size: 2rem;
   font-weight: 800;
 }
-.login_screen_div_form {
+.registracija_screen_div_form {
   width: 80%;
   height: 400px;
   text-align: center;
@@ -33,29 +33,32 @@
   font-size: 0.9rem;
   font-weight: 300;
 }
-.login_screen_nazad {
+.registracija_screen_nazad {
   display: flex;
   justify-content: center;
   align-items: center;
   margin: 0;
   height: 50px;
 }
-.login_screen_nazad h4 {
+.registracija_screen_nazad h4 {
   margin-left: 20px;
   margin-top: 9px;
   font-size: 1rem;
 }
-#login_screen_vrati {
+#registracija_screen_vrati {
   text-decoration: none;
   color: black;
 }
-#login_screen_registracija {
+#registracija_screen_login {
   font-size: 0.9rem;
   padding-left: 6px;
   margin-top: 10px;
 }
 @media only screen and (max-width: 768px) {
-  .login_screen {
+  .registracija_screen {
     flex-direction: column;
+  }
+  .registracija_screen_div {
+    height: 900px;
   }
 }

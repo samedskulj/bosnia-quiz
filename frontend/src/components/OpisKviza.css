@@ -31,16 +31,21 @@
   margin-right: 10px;
 }
 .registruj_se_btn {
-  width: 50%;
+  width: 100%;
 }
 .login_se_btn {
-  width: 50%;
+  width: 100%;
   margin-left: 20px;
   text-decoration: none;
 }
+
 #login_se_btn_link {
   text-decoration: none;
   color: black;
+}
+#registruj_se_btn_link {
+  text-decoration: none;
+  color: white;
 }
 @media only screen and (max-width: 768px) {
   .opis_kviza {
