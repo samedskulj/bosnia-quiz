@@ -1,6 +1,7 @@
+require("dotenv").config({ path: "../../.env" });
 const mongoose = require("mongoose");
 const bycrpt = require("bcryptjs");
-
+const jwt = require("jsonwebtoken");
 const KorisniciSchema = new mongoose.Schema({
   username: {
     type: String,
@@ -32,8 +33,15 @@ KorisniciSchema.pre("save", async function (next) {
   this.password = await bycrpt.hash(this.password, salt);
   next();
 });
+
 KorisniciSchema.methods.matchPasswords = async function (password) {
   return await bycrpt.compare(password, this.password);
+};
+
+KorisniciSchema.methods.getSignedToken = function () {
+  return jwt.sign({ id: this._id }, process.env.JWT_SECRET, {
+    expiresIn: process.env.JWT_EXPIRE,
+  });
 };
 const Korisnici = mongoose.model("Korisnici", KorisniciSchema);
 
