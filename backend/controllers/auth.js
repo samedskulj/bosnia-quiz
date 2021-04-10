@@ -1,5 +1,5 @@
 const Korisnik = require("../models/Korisnici");
-
+const ErrorResponse = require("../utils/errorResponse");
 exports.register = async (req, res, next) => {
   const { username, email, password } = req.body;
   try {
@@ -13,29 +13,27 @@ exports.register = async (req, res, next) => {
       korisnik,
     });
   } catch (error) {
-    res.status(500).json({
-      success: false,
-      error: error.message,
-    });
+    next(error);
   }
 };
 exports.login = async (req, res, next) => {
   const { email, password } = req.body;
   if (!email || !password) {
-    res
-      .status(400)
-      .json({ success: false, error: "Molimo Vas upišite podatke" });
+    return next(new ErrorResponse("Molimo Vas ukucajte email i šifru", 400));
   }
   try {
     const user = await Korisnik.findOne({ email }).select("+password");
+
     if (!user) {
-      res.status(404).json({ success: false, error: "Pogrešni podaci" });
+      return next(new ErrorResponse("Pogrešni podaci", 404));
     }
+
     const poklapaSe = await user.matchPasswords(password);
 
     if (!poklapaSe) {
-      res.status(404).json({ success: false, error: "Pogrešni podaci" });
+      return next(new ErrorResponse("Pogrešni podaci", 401));
     }
+
     res.status(201).json({
       success: true,
       token: "213sad23ed",
