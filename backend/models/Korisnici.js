@@ -1,4 +1,5 @@
 require("dotenv").config({ path: "../../.env" });
+const crypto = require("crypto");
 const mongoose = require("mongoose");
 const bycrpt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
@@ -42,6 +43,16 @@ KorisniciSchema.methods.getSignedToken = function () {
   return jwt.sign({ id: this._id }, process.env.JWT_SECRET, {
     expiresIn: process.env.JWT_EXPIRE,
   });
+};
+
+KorisniciSchema.methods.getResetPasswordToken = function () {
+  const resetToken = crypto.randomBytes(20).toString("hex");
+  this.resetPasswordToken = crypto
+    .createHash("sha256")
+    .update(resetToken)
+    .digest("hex");
+  this.resetPasswordExpire = Date.now() + 10 * (60 * 1000);
+  return resetToken;
 };
 const Korisnici = mongoose.model("Korisnici", KorisniciSchema);
 
