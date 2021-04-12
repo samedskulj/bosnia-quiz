@@ -1,8 +1,50 @@
-import React from "react";
+import React, { useState } from "react";
 import { MDBInput, MDBBtn } from "mdb-react-ui-kit";
 import { Link } from "react-router-dom";
 import "./Registracija.css";
-const Registracija = () => {
+import axios from "axios";
+import { motion } from "framer-motion";
+const Registracija = ({ history }) => {
+  const [username, setUsername] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
+  const [error, setError] = useState("");
+
+  const registracijaHandler = async (e) => {
+    e.preventDefault();
+
+    const config = {
+      header: {
+        "Content-Type": "application/json",
+      },
+    };
+
+    if (password !== confirmPassword) {
+      setPassword("");
+      setConfirmPassword("");
+      setTimeout(() => {
+        setError("");
+      }, 5000);
+      return setError("Šifre se ne poklapaju");
+    }
+
+    try {
+      const { data } = await axios.post(
+        "/api/auth/registracija",
+        { username, email, password },
+        config
+      );
+      console.log(data);
+      localStorage.setItem("authToken", data.token);
+      history.push("/kviz");
+    } catch (error) {
+      setError(error.response.data.error);
+      setTimeout(() => {
+        setError("");
+      }, 5000);
+    }
+  };
   return (
     <>
       <article className="registracija_screen">
@@ -10,20 +52,52 @@ const Registracija = () => {
         <div className="registracija_screen_div">
           <p>lahko.ba</p>
           <div className="registracija_screen_div_form">
-            <form>
-              <MDBInput label="Username" id="formControlDefault" type="text" />
-              <br></br>
-              <MDBInput label="Email" id="formControlDefault" type="text" />
-              <br></br>
-              <MDBInput label="Šifra" id="formControlDefault" type="text" />
-              <br></br>
+            {error && (
+              <motion.h3
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 0.3 }}
+                id="registracija_screen_error"
+              >
+                {error}
+              </motion.h3>
+            )}
+            <form onSubmit={registracijaHandler}>
               <MDBInput
-                label="Potvrdi šifru"
+                value={username}
+                onChange={(e) => setUsername(e.target.value)}
+                label="Username"
                 id="formControlDefault"
                 type="text"
               />
               <br></br>
-              <MDBBtn color="dark">Registruj se</MDBBtn>
+              <MDBInput
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                label="Email"
+                id="formControlDefault"
+                type="text"
+              />
+              <br></br>
+              <MDBInput
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                label="Šifra"
+                id="formControlDefault"
+                type="password"
+              />
+              <br></br>
+              <MDBInput
+                value={confirmPassword}
+                onChange={(e) => setConfirmPassword(e.target.value)}
+                label="Potvrdi šifru"
+                id="formControlDefault"
+                type="password"
+              />
+              <br></br>
+              <MDBBtn type="submit" color="dark">
+                Registruj se
+              </MDBBtn>
               <p id="registracija_screen_login">
                 Imate account?
                 <Link id="registracija_screen_login" to="/login">
