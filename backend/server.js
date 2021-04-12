@@ -1,4 +1,4 @@
-require("dotenv").config();
+require("dotenv").config({ path: "../config.env" });
 
 const express = require("express");
 const connectBazu = require("./config/db");

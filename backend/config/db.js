@@ -1,3 +1,5 @@
+require("dotenv").config();
+
 const mongoose = require("mongoose");
 
 const connectBazu = async () => {
@@ -10,4 +12,5 @@ const connectBazu = async () => {
 
   console.log("Baza podataka spojena");
 };
+
 module.exports = connectBazu;

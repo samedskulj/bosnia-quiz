@@ -1,6 +1,6 @@
 const Korisnik = require("../models/Korisnici");
 const ErrorResponse = require("../utils/errorResponse");
-const sendMail = require("../utils/pošaljiEmail")
+const posaljiEmail = require("../utils/pošaljiEmail");
 const crypto = require("crypto");
 exports.register = async (req, res, next) => {
   const { username, email, password } = req.body;
@@ -42,12 +42,12 @@ exports.login = async (req, res, next) => {
   }
 };
 
-exports.zaboravljenpassword = (req, res, next) => {
-  const {email} = req.body;
+exports.zaboravljenpassword = async (req, res, next) => {
+  const { email } = req.body;
   try {
-    const korisnik = await User.findOne({email});
-    if(!korisnik) {
-      return next(new ErrorResponse("Email se ne može poslati!", 404))
+    const korisnik = await Korisnik.findOne({ email });
+    if (!korisnik) {
+      return next(new ErrorResponse("Email se ne može poslati!", 404));
     }
     const resetToken = korisnik.getResetPasswordToken();
 
@@ -57,54 +57,55 @@ exports.zaboravljenpassword = (req, res, next) => {
 
     const poruka = `<h1>Ukoliko želite resetovati šifru</h1>
     <p>Molimo Vas posjetite link, ispod</p>
-    <a href=${resetUrl} clicktrackin=off>${resetUrl}</a>`
+    <a href=${resetUrl} clicktracking=off>${resetUrl}</a>`;
     try {
-      await sendMail({
-        to: korisnik.mail,
+      await posaljiEmail({
+        to: korisnik.email,
         subject: "Password Reset",
-        text: poruka
-      })
+        text: poruka,
+      });
+
       res.status(200).json({
         success: true,
-        data: "Email Sent"
-      })
+        data: "Email Sent",
+      });
     } catch (error) {
       korisnik.resetPasswordToken = undefined;
       korisnik.resetPasswordExpire = undefined;
 
-      await user.save();
+      await korisnik.save();
 
-      return next(new ErrorResponse("Email nije povezan, pokušajte ponovo", 500))
+      return next(new ErrorResponse("Email se nije mogao poslati", 500));
     }
   } catch (error) {
-    
+    next(error);
   }
 };
 
-exports.resetpassword = (req, res, next) => {
-  const resetPasswordToken = crypto.createHash("sha256").update(req.params.resetToken).digest("hex");
+exports.resetpassword = async (req, res, next) => {
+  const resetPasswordToken = crypto
+    .createHash("sha256")
+    .update(req.params.resetToken)
+    .digest("hex");
   try {
-    const user = await User.findOne({
+    const user = await Korisnik.findOne({
       resetPasswordToken,
-      resetPasswordExpire: {$gt: Date.now()}
-    })
-    if(!user) {
-      return next(new ErrorResponse("Pogrešno resetovanje", 400))
+      resetPasswordExpire: { $gt: Date.now() },
+    });
+    if (!user) {
+      return next(new ErrorResponse("Pogrešno resetovanje", 400));
     }
     user.password = req.body.password;
-    user.resetPassworToken = undefined;
-    user.resetPasswordExpire= undefined;
+    user.resetPasswordToken = undefined;
+    user.resetPasswordExpire = undefined;
 
     await user.save();
 
     res.status(201).json({
       success: true,
-      data: "Šifra uspješno promjenuta"
-
-    })
-  } catch (error) {
-    
-  }
+      data: "Šifra uspješno promjenuta",
+    });
+  } catch (error) {}
 };
 
 const sendToken = (user, statusCode, res) => {

@@ -1,5 +1,4 @@
 const nodemailer = require("nodemailer");
-const { options } = require("../routes/auth");
 
 const posaljiEmail = (options) => {
   const transporter = nodemailer.createTransport({
@@ -9,21 +8,21 @@ const posaljiEmail = (options) => {
       pass: process.env.EMAIL_PASSWORD,
     },
   });
+
+  const mailOpcije = {
+    from: process.env.EMAIL_FROM,
+    to: options.to,
+    subject: options.subject,
+    html: options.text,
+  };
+
+  transporter.sendMail(mailOpcije, function (err, info) {
+    if (err) {
+      console.log(err);
+    } else {
+      console.log(info);
+    }
+  });
 };
 
-const mailOpcije = {
-  from: process.env.EMAIL_FROM,
-  to: options.to,
-  subject: options.subject,
-  html: options.text,
-};
-
-transporter.sendMail(mailOpcije, function (err, info) {
-  if (err) {
-    console.log(err);
-  } else {
-    console.log(info);
-  }
-});
-
-module.exports = sendMail;
+module.exports = posaljiEmail;

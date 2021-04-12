@@ -26,6 +26,7 @@ const KorisniciSchema = new mongoose.Schema({
   resetPasswordToke: String,
   resetPasswordExpire: Date,
 });
+
 KorisniciSchema.pre("save", async function (next) {
   if (!this.isModified("password")) {
     next();
@@ -52,6 +53,7 @@ KorisniciSchema.methods.getResetPasswordToken = function () {
     .update(resetToken)
     .digest("hex");
   this.resetPasswordExpire = Date.now() + 10 * (60 * 1000);
+
   return resetToken;
 };
 const Korisnici = mongoose.model("Korisnici", KorisniciSchema);

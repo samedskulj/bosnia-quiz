@@ -11,7 +11,7 @@ router.route("/registracija").post(register);
 
 router.route("/login").post(login);
 
-router.route("/zaboravljenašifra").post(zaboravljenpassword);
+router.route("/zaboravljenasifra").post(zaboravljenpassword);
 
-router.route("/resetpassword/:resetToken").put(resetpassword);
+router.route("/passwordreset/:resetToken").put(resetpassword);
 module.exports = router;
