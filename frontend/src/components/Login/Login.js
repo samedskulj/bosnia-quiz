@@ -10,9 +10,11 @@ const Login = ({ history }) => {
       history.push("/kviz");
     }
   }, [history]);
+
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
+
   const loginHandler = async (e) => {
     e.preventDefault();
 
@@ -28,8 +30,8 @@ const Login = ({ history }) => {
         { email, password },
         config
       );
-
       localStorage.setItem("authToken", data.token);
+
       history.push("/kviz");
     } catch (error) {
       setError(error.response.data.error);

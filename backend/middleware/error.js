@@ -16,7 +16,7 @@ const errorHandler = (err, req, res, next) => {
   }
 
   res.status(error.statusCode || 500).json({
-    sucess: false,
+    success: false,
     error: error.message || "Greška u serveru",
   });
 };

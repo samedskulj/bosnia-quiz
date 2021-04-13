@@ -2,13 +2,12 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 const Kviz = ({ history }) => {
   const [privateData, setPrivateData] = useState("");
+  const [error, setError] = useState("");
+
   useEffect(() => {
-    if (!localStorage.getItem("authToken")) {
-      history.push("/login");
-    }
     const fetchData = async () => {
       const config = {
-        header: {
+        headers: {
           "Content-Type": "application/json",
           Authorization: `Bearer ${localStorage.getItem("authToken")}`,
         },
@@ -18,13 +17,19 @@ const Kviz = ({ history }) => {
         setPrivateData(data.data);
       } catch (error) {
         localStorage.removeItem("authToken");
+        setError("Nemate pristup ovoj ruti, molimo Vas ulogujte se!");
       }
     };
 
     fetchData();
-  }, [history]);
+  }, []);
 
-  return <div>test</div>;
+  return (
+    <div>
+      {error && <p>{error}</p>}
+      {privateData}
+    </div>
+  );
 };
 
 export default Kviz;
