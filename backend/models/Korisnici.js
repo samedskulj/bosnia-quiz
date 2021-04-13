@@ -23,7 +23,7 @@ const KorisniciSchema = new mongoose.Schema({
     minlength: 6,
     select: false,
   },
-  resetPasswordToke: String,
+  resetPasswordToken: String,
   resetPasswordExpire: Date,
 });
 

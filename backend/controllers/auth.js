@@ -104,8 +104,11 @@ exports.resetpassword = async (req, res, next) => {
     res.status(201).json({
       success: true,
       data: "Šifra uspješno promjenuta",
+      token: user.getSignedToken(),
     });
-  } catch (error) {}
+  } catch (error) {
+    next(error);
+  }
 };
 
 const sendToken = (user, statusCode, res) => {

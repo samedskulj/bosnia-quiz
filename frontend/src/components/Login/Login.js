@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import "./Login.css";
+import { motion } from "framer-motion";
 const Login = ({ history }) => {
   useEffect(() => {
     if (localStorage.getItem("authToken")) {
@@ -44,7 +45,16 @@ const Login = ({ history }) => {
         <div className="login_screen_div">
           <p>lahko.ba</p>
           <div className="login_screen_div_form">
-            {error && <h3>{error}</h3>}
+            {error && (
+              <motion.h3
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 0.3 }}
+                id="login_screen_error"
+              >
+                {error}
+              </motion.h3>
+            )}
             <form onSubmit={loginHandler}>
               <MDBInput
                 value={email}

@@ -1,0 +1,50 @@
+.reset_šifre {
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+
+.reset_šifre_div {
+  width: 400px;
+  height: 600px;
+  background-color: white;
+  box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+.reset_šifre p {
+  font-size: 2rem;
+  font-weight: 800;
+}
+.reset_šifre_form {
+  width: 80%;
+  height: 400px;
+  text-align: center;
+
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+
+#reset_šifre_vrati {
+  text-decoration: none;
+  color: black;
+}
+#reset_šifre_napomena {
+  font-size: 1rem;
+}
+.reset_šifre_nazad {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  height: 50px;
+}
+.reset_šifre_nazad h4 {
+  margin-left: 20px;
+  margin-top: 9px;
+  font-size: 1rem;
+}

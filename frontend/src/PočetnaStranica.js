@@ -7,6 +7,7 @@ import Registracija from "./components/Registracija/Registracija";
 import KompletnaStranica from "./components/KompletnaStranica";
 import RutaZaKviz from "./RutaZaKviz";
 import Kviz from "./components/Kviz/Kviz";
+import ResetŠifre from "./components/ResetPass/ResetŠifre";
 const PočetnaStranica = () => {
   const [showNavNoToggler, setShowNavNoToggler] = useState(false);
   return (
@@ -21,7 +22,10 @@ const PočetnaStranica = () => {
             path="/zaboravljenasifra"
             component={ZaboravljenaSifra}
           ></Route>
-          <Route path="/passwordreset/:resetToken"></Route>
+          <Route
+            path="/passwordreset/:resetToken"
+            component={ResetŠifre}
+          ></Route>
         </Switch>
       </Router>
     </div>

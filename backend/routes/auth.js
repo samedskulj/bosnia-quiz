@@ -13,5 +13,5 @@ router.route("/login").post(login);
 
 router.route("/zaboravljenasifra").post(zaboravljenpassword);
 
-router.route("/passwordreset/:resetToken").put(resetpassword);
+router.route("/resetpassword/:resetToken").put(resetpassword);
 module.exports = router;
