@@ -7,7 +7,9 @@ import { motion } from "framer-motion";
 
 const Login = ({ history }) => {
   useEffect(() => {
-    if (localStorage.getItem("authToken")) {
+    if (!localStorage.getItem("authToken")) {
+      history.push("/login");
+    } else {
       history.push("/kviz");
     }
   }, [history]);

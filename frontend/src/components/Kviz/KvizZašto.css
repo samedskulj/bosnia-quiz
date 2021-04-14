@@ -1,0 +1,85 @@
+.kvizzasto {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  padding-top: 30px;
+  margin: 0 auto;
+  align-items: center;
+}
+.kvizzasto_div {
+  width: 85%;
+  text-align: left;
+}
+.kvizzasto_div h3 {
+  font-size: 2.6rem;
+}
+.kvizzasto_div_slike {
+  width: 100%;
+  height: 25vh;
+  display: flex;
+  justify-content: space-around;
+}
+.kvizzasto_slika1,
+.kvizzasto_slika2 {
+  width: 110px;
+  height: 180px;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.2);
+}
+.kvizzasto_slika1 {
+  align-self: flex-start;
+  content: url("../../slike/undraw_Notify_re_65on.png");
+  object-fit: cover;
+}
+.kvizzasto_slika2 {
+  align-self: flex-end;
+  content: url("../../slike/undraw_Mornings_solb.png");
+  object-fit: cover;
+}
+@media only screen and (min-width: 768px) {
+  .kvizzasto_div_slike {
+    height: 40vh;
+  }
+  .kvizzasto_slika1,
+  .kvizzasto_slika2 {
+    width: 300px;
+    height: 300px;
+  }
+  .kvizzasto_div p {
+    font-size: 1.3rem;
+  }
+  .kvizzasto_div h3 {
+    font-size: 3.2rem;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  .kvizzasto {
+    flex-direction: row;
+    height: 80vh;
+    justify-content: space-between;
+  }
+  .kvizzasto_div {
+    margin-left: 30px;
+
+    height: 60vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .kvizzasto_div h3 {
+    font-weight: bold;
+    font-size: 3.4rem;
+  }
+  .kvizzasto_div h3::after {
+    content: "";
+    display: block;
+
+    width: 30%;
+    padding-top: 20px;
+    border-bottom: 3px solid #a29cff;
+  }
+  .kvizzasto_div p {
+    font-size: 1.3rem;
+  }
+}

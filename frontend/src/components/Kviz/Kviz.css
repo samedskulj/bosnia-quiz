@@ -16,3 +16,39 @@
 #kviz_btn {
   width: 80%;
 }
+.kviz_div1_odaberi {
+  border-bottom: 4px solid #a29cff;
+}
+
+@media only screen and (min-width: 768px) {
+  #kviz_btn {
+    width: 65%;
+    height: 80px;
+    font-size: 1.3rem;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  #kviz_btn {
+    width: 50%;
+    height: 50px;
+    font-size: 0.9rem;
+  }
+  .kviz_main {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+  .kviz_div1 {
+    width: 30%;
+    background-image: none;
+    height: 100vh;
+  }
+  #kviz_slika_velika {
+    width: 1200px;
+    height: 900px;
+    background-image: url("../../slike/undraw_drone_surveillance_kjjg.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+}

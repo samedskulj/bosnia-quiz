@@ -5,6 +5,7 @@ import KvizNavbar from "./KvizNavbar";
 import "./Kviz.css";
 import { MDBBtn } from "mdb-react-ui-kit";
 import KvizVijesti from "./KvizVijesti";
+import KvizZašto from "./KvizZašto";
 const Kviz = ({ history }) => {
   const [privateData, setPrivateData] = useState("");
   const [error, setError] = useState("");
@@ -42,13 +43,17 @@ const Kviz = ({ history }) => {
       </nav>
       <main className="kviz_main">
         <div className="kviz_div1">
-          <p>Odaberite svoj kviz</p>
+          <p
+            style={{ fontWeight: "bold", fontSize: "1.5rem" }}
+            className="kviz_div1_odaberi"
+          >
+            Odaberite svoj kviz
+          </p>
           <MDBBtn id="kviz_btn" color="dark">
             Historija
           </MDBBtn>
           <br></br>
           <MDBBtn id="kviz_btn" color="dark">
-            {" "}
             Generalno znanje
           </MDBBtn>
           <br></br>
@@ -57,8 +62,12 @@ const Kviz = ({ history }) => {
           </MDBBtn>
           <br></br>
         </div>
+        <div id="kviz_slika_velika">
+          <div></div>
+        </div>
       </main>
       <KvizVijesti></KvizVijesti>
+      <KvizZašto></KvizZašto>
     </>
   );
 };
