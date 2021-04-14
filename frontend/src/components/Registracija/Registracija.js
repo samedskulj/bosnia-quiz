@@ -3,6 +3,7 @@ import { MDBInput, MDBBtn } from "mdb-react-ui-kit";
 import { Link } from "react-router-dom";
 import "./Registracija.css";
 import axios from "axios";
+
 import { motion } from "framer-motion";
 const Registracija = ({ history }) => {
   const [username, setUsername] = useState("");

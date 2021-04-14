@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 import "./Login.css";
 import { motion } from "framer-motion";
+
 const Login = ({ history }) => {
   useEffect(() => {
     if (localStorage.getItem("authToken")) {

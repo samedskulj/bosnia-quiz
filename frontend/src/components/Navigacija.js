@@ -14,7 +14,11 @@ const Navigacija = () => {
         <Link to="/">
           <Navbar.Brand href="#home">lahko.ba</Navbar.Brand>
         </Link>
-        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+
+        <Navbar.Toggle>
+          {" "}
+          <i class="fas fa-bars" aria-controls="basic-navbar-nav"></i>
+        </Navbar.Toggle>
         <Navbar.Collapse id="basic-navbar-nav" className="justify-content-end">
           <Nav className="navbar_linkovi">
             <Link id="navbar_početna_stranica" to="/">

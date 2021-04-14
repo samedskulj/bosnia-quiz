@@ -5,6 +5,7 @@ import Komponente from "./Komponente";
 import OsobineTestova from "./OsobineTestova";
 import LičniPodaci from "./LičniPodaci";
 import { motion } from "framer-motion";
+
 const KompletnaStranica = () => {
   return (
     <>

@@ -1,5 +1,8 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import { Navbar, Nav, NavDropdown } from "react-bootstrap";
+import KvizNavbar from "./KvizNavbar";
+import "./Kviz.css";
 const Kviz = ({ history }) => {
   const [privateData, setPrivateData] = useState("");
   const [error, setError] = useState("");
@@ -23,12 +26,22 @@ const Kviz = ({ history }) => {
 
     fetchData();
   }, []);
-
+  const logouthandler = () => {
+    if (localStorage.getItem("authToken")) {
+      localStorage.removeItem("authToken");
+      history.push("/login");
+    }
+  };
   return (
-    <div>
+    <>
       {error && <p>{error}</p>}
-      {privateData}
-    </div>
+      <nav>
+        <KvizNavbar logouthandler={logouthandler}></KvizNavbar>
+      </nav>
+      <main className="kviz_main">
+        <div className="kviz_div1">pozz</div>
+      </main>
+    </>
   );
 };
 

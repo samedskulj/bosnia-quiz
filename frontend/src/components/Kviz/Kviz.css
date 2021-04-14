@@ -1,0 +1,11 @@
+.kviz_main {
+  padding-top: 40px;
+}
+
+.kviz_div1 {
+  height: 70vh;
+  background-color: red;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
