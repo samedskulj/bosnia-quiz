@@ -4,8 +4,15 @@
 
 .kviz_div1 {
   height: 70vh;
-  background-color: red;
+  background-color: transparent;
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
+  background-image: url("../../slike/kviz_app.png");
+  width: 100%;
+  background-repeat: no-repeat;
+}
+#kviz_btn {
+  width: 80%;
 }

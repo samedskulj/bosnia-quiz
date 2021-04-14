@@ -3,6 +3,8 @@ import axios from "axios";
 import { Navbar, Nav, NavDropdown } from "react-bootstrap";
 import KvizNavbar from "./KvizNavbar";
 import "./Kviz.css";
+import { MDBBtn } from "mdb-react-ui-kit";
+import KvizVijesti from "./KvizVijesti";
 const Kviz = ({ history }) => {
   const [privateData, setPrivateData] = useState("");
   const [error, setError] = useState("");
@@ -34,13 +36,29 @@ const Kviz = ({ history }) => {
   };
   return (
     <>
-      {error && <p>{error}</p>}
+      {error ? <p>{error}</p> : ""}
       <nav>
         <KvizNavbar logouthandler={logouthandler}></KvizNavbar>
       </nav>
       <main className="kviz_main">
-        <div className="kviz_div1">pozz</div>
+        <div className="kviz_div1">
+          <p>Odaberite svoj kviz</p>
+          <MDBBtn id="kviz_btn" color="dark">
+            Historija
+          </MDBBtn>
+          <br></br>
+          <MDBBtn id="kviz_btn" color="dark">
+            {" "}
+            Generalno znanje
+          </MDBBtn>
+          <br></br>
+          <MDBBtn id="kviz_btn" color="dark">
+            Sport
+          </MDBBtn>
+          <br></br>
+        </div>
       </main>
+      <KvizVijesti></KvizVijesti>
     </>
   );
 };
