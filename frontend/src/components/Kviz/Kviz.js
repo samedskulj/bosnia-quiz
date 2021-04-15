@@ -6,6 +6,8 @@ import "./Kviz.css";
 import { MDBBtn } from "mdb-react-ui-kit";
 import KvizVijesti from "./KvizVijesti";
 import KvizZašto from "./KvizZašto";
+import { connect } from "react-redux";
+import { Link } from "react-router-dom";
 const Kviz = ({ history }) => {
   const [privateData, setPrivateData] = useState("");
   const [error, setError] = useState("");
@@ -54,7 +56,7 @@ const Kviz = ({ history }) => {
           </MDBBtn>
           <br></br>
           <MDBBtn id="kviz_btn" color="dark">
-            Generalno znanje
+            <Link to="kviz/generalnoznanje"> Generalno znanje </Link>
           </MDBBtn>
           <br></br>
           <MDBBtn id="kviz_btn" color="dark">
@@ -71,5 +73,7 @@ const Kviz = ({ history }) => {
     </>
   );
 };
-
-export default Kviz;
+const mapStateToProps = (state) => {
+  return { ukupno: state.ukupno };
+};
+export default connect(mapStateToProps)(Kviz);

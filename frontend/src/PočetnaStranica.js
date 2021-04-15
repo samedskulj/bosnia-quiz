@@ -8,8 +8,9 @@ import KompletnaStranica from "./components/KompletnaStranica";
 import RutaZaKviz from "./RutaZaKviz";
 import Kviz from "./components/Kviz/Kviz";
 import ResetŠifre from "./components/ResetPass/ResetŠifre";
+import { connect } from "react-redux";
+import GeneralnoZnanje from "./components/Generalno/GeneralnoZnanje";
 const PočetnaStranica = () => {
-  const [showNavNoToggler, setShowNavNoToggler] = useState(false);
   return (
     <div>
       <Router>
@@ -26,6 +27,9 @@ const PočetnaStranica = () => {
             path="/passwordreset/:resetToken"
             component={ResetŠifre}
           ></Route>
+          <Route path="/kviz/generalnoznanje">
+            <GeneralnoZnanje></GeneralnoZnanje>
+          </Route>
         </Switch>
       </Router>
     </div>

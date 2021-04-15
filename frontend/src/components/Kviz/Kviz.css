@@ -19,7 +19,9 @@
 .kviz_div1_odaberi {
   border-bottom: 4px solid #a29cff;
 }
-
+#link_historija {
+  width: 100%;
+}
 @media only screen and (min-width: 768px) {
   #kviz_btn {
     width: 65%;

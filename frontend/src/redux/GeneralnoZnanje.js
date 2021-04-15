@@ -1,4 +1,4 @@
-export const initialStore = [
+export const generalnoZnanje = [
   {
     pitanje: "Koji je glavni grad Bosne i Hercegovine?",
     izbori: ["Sarajevo", "Banja Luka", "Mostar", "Zenica"],
