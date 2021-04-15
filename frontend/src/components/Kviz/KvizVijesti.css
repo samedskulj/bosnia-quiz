@@ -19,6 +19,9 @@
   color: white;
   text-align: left;
 }
+.vijesti h3 {
+  border-bottom: 4px solid #a29cff;
+}
 .vijesti {
   margin: 0 auto;
   display: flex;

@@ -53,6 +53,14 @@
     font-size: 3.2rem;
   }
 }
+.kvizzasto_div h3::after {
+  content: "";
+  display: block;
+
+  width: 30%;
+  padding-top: 20px;
+  border-bottom: 3px solid #a29cff;
+}
 @media only screen and (min-width: 1200px) {
   .kvizzasto {
     flex-direction: row;
