@@ -55,9 +55,11 @@ const Kviz = ({ history }) => {
             Historija
           </MDBBtn>
           <br></br>
-          <MDBBtn id="kviz_btn" color="dark">
-            <Link to="kviz/generalnoznanje"> Generalno znanje </Link>
-          </MDBBtn>
+          <Link id="generalnoznanje_link" to="kviz/generalnoznanje">
+            <MDBBtn id="kviz_btn" color="dark">
+              Generalno znanje{" "}
+            </MDBBtn>
+          </Link>
           <br></br>
           <MDBBtn id="kviz_btn" color="dark">
             Sport

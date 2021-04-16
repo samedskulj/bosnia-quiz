@@ -22,6 +22,10 @@
 #link_historija {
   width: 100%;
 }
+#generalnoznanje_link {
+  width: 100%;
+  text-align: center;
+}
 @media only screen and (min-width: 768px) {
   #kviz_btn {
     width: 65%;

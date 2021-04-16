@@ -11,6 +11,7 @@
   width: 300px;
   height: 600px;
   background-color: white;
+  box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.2);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -27,4 +28,29 @@
 }
 .izbori:first-child {
   margin-top: 20px;
+}
+
+#izbori_input {
+  margin-right: 10px;
+  text-align: center;
+}
+.izbori_label {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 300px;
+  height: 30px;
+  padding-top: 5px;
+  transition: 0.3s ease-in-out;
+}
+.izbori_label:hover {
+  background-color: rgb(233, 233, 233);
+}
+.izbori_label:last-child {
+  margin-bottom: 20px;
+}
+#flexRadioDefault1 {
+  margin: 3px 10px;
+  display: inline-block;
+  vertical-align: middle;
 }

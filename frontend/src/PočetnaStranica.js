@@ -27,9 +27,10 @@ const PočetnaStranica = () => {
             path="/passwordreset/:resetToken"
             component={ResetŠifre}
           ></Route>
-          <Route path="/kviz/generalnoznanje">
-            <GeneralnoZnanje></GeneralnoZnanje>
-          </Route>
+          <Route
+            path="/kviz/generalnoznanje"
+            component={GeneralnoZnanje}
+          ></Route>
         </Switch>
       </Router>
     </div>
