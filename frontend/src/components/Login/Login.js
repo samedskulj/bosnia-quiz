@@ -35,7 +35,7 @@ const Login = ({ history }) => {
       );
       localStorage.setItem("authToken", data.token);
 
-      history.push("/kviz");
+      history.push(`/kviz/${localStorage.getItem("authToken")}`);
     } catch (error) {
       setError(error.response.data.error);
       setTimeout(() => {

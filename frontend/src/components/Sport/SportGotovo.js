@@ -21,7 +21,9 @@ const SportGotovo = ({ pitanjeSport }) => {
     <>
       <main className="sport_gotovo">
         <div className="sport_gotovo_div">
-          <p>Odgovorili ste na {counter} tačnih pitanja od 7</p>
+          <p>
+            Odgovorili ste na {counter} tačnih pitanja od {pitanjeSport.length}
+          </p>
         </div>
       </main>
     </>

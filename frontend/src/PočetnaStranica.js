@@ -16,7 +16,11 @@ const PočetnaStranica = () => {
     <div>
       <Router>
         <Switch>
-          <RutaZaKviz exact path="/kviz" component={Kviz}></RutaZaKviz>
+          <RutaZaKviz
+            exact
+            path="/kviz/:signedToken"
+            component={Kviz}
+          ></RutaZaKviz>
           <Route exact path="/" component={KompletnaStranica}></Route>
           <Route path="/login" component={Login}></Route>
           <Route path="/registracija" component={Registracija}></Route>

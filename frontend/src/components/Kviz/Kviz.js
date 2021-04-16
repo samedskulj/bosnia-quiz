@@ -21,7 +21,10 @@ const Kviz = ({ history }) => {
         },
       };
       try {
-        const { data } = await axios.get("/api/private", config);
+        const { data } = await axios.get(
+          `/api/private/${localStorage.getItem("authToken")}`,
+          config
+        );
         setPrivateData(data.data);
       } catch (error) {
         localStorage.removeItem("authToken");
@@ -40,6 +43,7 @@ const Kviz = ({ history }) => {
   return (
     <>
       {error ? <p>{error}</p> : ""}
+
       <nav>
         <KvizNavbar logouthandler={logouthandler}></KvizNavbar>
       </nav>
