@@ -5,9 +5,11 @@ import { createStore } from "redux";
 import { generalnoZnanje } from "./redux/GeneralnoZnanje";
 import reducer from "./redux/reducer";
 import { Provider } from "react-redux";
+import { sport } from "./redux/Sport";
 
 const initialStore = {
   pitanjeZnanje: generalnoZnanje,
+  pitanjeSport: sport,
   ukupno: 0,
 };
 

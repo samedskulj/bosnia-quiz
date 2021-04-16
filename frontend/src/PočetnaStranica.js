@@ -10,6 +10,7 @@ import Kviz from "./components/Kviz/Kviz";
 import ResetŠifre from "./components/ResetPass/ResetŠifre";
 import { connect } from "react-redux";
 import GeneralnoZnanje from "./components/Generalno/GeneralnoZnanje";
+import Sport from "./components/Sport/Sport";
 const PočetnaStranica = () => {
   return (
     <div>
@@ -31,6 +32,7 @@ const PočetnaStranica = () => {
             path="/kviz/generalnoznanje"
             component={GeneralnoZnanje}
           ></Route>
+          <Route path="/kviz/sport" component={Sport}></Route>
         </Switch>
       </Router>
     </div>
