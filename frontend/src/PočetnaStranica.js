@@ -11,16 +11,13 @@ import ResetŠifre from "./components/ResetPass/ResetŠifre";
 import { connect } from "react-redux";
 import GeneralnoZnanje from "./components/Generalno/GeneralnoZnanje";
 import Sport from "./components/Sport/Sport";
+import Historija from "./components/Historija/Historija";
 const PočetnaStranica = () => {
   return (
     <div>
       <Router>
         <Switch>
-          <RutaZaKviz
-            exact
-            path="/kviz/:signedToken"
-            component={Kviz}
-          ></RutaZaKviz>
+          <RutaZaKviz exact path="/kviz" component={Kviz}></RutaZaKviz>
           <Route exact path="/" component={KompletnaStranica}></Route>
           <Route path="/login" component={Login}></Route>
           <Route path="/registracija" component={Registracija}></Route>
@@ -37,6 +34,7 @@ const PočetnaStranica = () => {
             component={GeneralnoZnanje}
           ></Route>
           <Route path="/kviz/sport" component={Sport}></Route>
+          <Route path="/kviz/historija" component={Historija}></Route>
         </Switch>
       </Router>
     </div>

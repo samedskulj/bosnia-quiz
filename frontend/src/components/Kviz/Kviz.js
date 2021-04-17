@@ -21,10 +21,7 @@ const Kviz = ({ history }) => {
         },
       };
       try {
-        const { data } = await axios.get(
-          `/api/private/${localStorage.getItem("authToken")}`,
-          config
-        );
+        const { data } = await axios.get(`/api/private/`, config);
         setPrivateData(data.data);
       } catch (error) {
         localStorage.removeItem("authToken");
@@ -43,7 +40,7 @@ const Kviz = ({ history }) => {
   return (
     <>
       {error ? <p>{error}</p> : ""}
-
+      {privateData && <p>{privateData}</p>}
       <nav>
         <KvizNavbar logouthandler={logouthandler}></KvizNavbar>
       </nav>
@@ -55,9 +52,11 @@ const Kviz = ({ history }) => {
           >
             Odaberite svoj kviz
           </p>
-          <MDBBtn id="kviz_btn" color="dark">
-            Historija
-          </MDBBtn>
+          <Link id="_link" to="kviz/historija">
+            <MDBBtn id="kviz_btn" color="dark">
+              Historija
+            </MDBBtn>
+          </Link>
           <br></br>
           <Link id="_link" to="kviz/generalnoznanje">
             <MDBBtn id="kviz_btn" color="dark">
@@ -70,7 +69,6 @@ const Kviz = ({ history }) => {
               Sport
             </MDBBtn>
           </Link>
-
           <br></br>
         </div>
         <div id="kviz_slika_velika">

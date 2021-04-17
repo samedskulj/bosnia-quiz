@@ -6,10 +6,12 @@ import { generalnoZnanje } from "./redux/GeneralnoZnanje";
 import reducer from "./redux/reducer";
 import { Provider } from "react-redux";
 import { sport } from "./redux/Sport";
+import { historija } from "./redux/Historija";
 
 const initialStore = {
   pitanjeZnanje: generalnoZnanje,
   pitanjeSport: sport,
+  pitanjeHistorija: historija,
   ukupno: 0,
 };
 
