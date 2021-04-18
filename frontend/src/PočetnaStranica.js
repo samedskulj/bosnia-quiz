@@ -12,6 +12,7 @@ import { connect } from "react-redux";
 import GeneralnoZnanje from "./components/Generalno/GeneralnoZnanje";
 import Sport from "./components/Sport/Sport";
 import Historija from "./components/Historija/Historija";
+import Profil from "./components/Profil/Profil";
 const PočetnaStranica = () => {
   return (
     <div>
@@ -35,6 +36,7 @@ const PočetnaStranica = () => {
           ></Route>
           <Route path="/kviz/sport" component={Sport}></Route>
           <Route path="/kviz/historija" component={Historija}></Route>
+          <Route path="/kviz/profil" component={Profil}></Route>
         </Switch>
       </Router>
     </div>

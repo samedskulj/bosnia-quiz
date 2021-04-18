@@ -3,9 +3,17 @@ import "./GeneralnoZnanjeMeni.css";
 import { MDBBtn } from "mdb-react-ui-kit";
 import { mjenjanjeIgre } from "./GeneralnoZnanje";
 import { Link } from "react-router-dom";
+import axios from "axios";
 const GeneralnoZnanjeMeni = () => {
   const { gameState, setGameState } = useContext(mjenjanjeIgre);
-  const mjenjajHandler = () => {
+  const mjenjajHandler = async () => {
+    const config = {
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${localStorage.getItem("authToken")}`,
+      },
+    };
+    const { data } = await axios.post("/api/private/pocetak", {}, config);
     setGameState("igra");
   };
   return (

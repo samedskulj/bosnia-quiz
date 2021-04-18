@@ -32,9 +32,10 @@ const Registracija = ({ history }) => {
 
     try {
       let trofeji = 0;
+      let odigraniKvizovi = 0;
       const { data } = await axios.post(
         "/api/auth/registracija",
-        { username, email, password, trofeji },
+        { username, email, password, trofeji, odigraniKvizovi },
         config
       );
       console.log(data);

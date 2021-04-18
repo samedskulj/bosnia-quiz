@@ -43,11 +43,7 @@ const Kviz = ({ history }) => {
   return (
     <>
       {error ? <p>{error}</p> : ""}
-      {ime && (
-        <p>
-          {ime}, {trofeji}
-        </p>
-      )}
+
       <nav>
         <KvizNavbar logouthandler={logouthandler}></KvizNavbar>
       </nav>

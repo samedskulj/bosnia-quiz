@@ -28,6 +28,9 @@ const KorisniciSchema = new mongoose.Schema({
   trofeji: {
     type: Number,
   },
+  odigraniKvizovi: {
+    type: Number,
+  },
 });
 
 KorisniciSchema.pre("save", async function (next) {

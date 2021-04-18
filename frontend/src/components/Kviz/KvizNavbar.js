@@ -7,7 +7,7 @@ const KvizNavbar = (props) => {
   return (
     <>
       <Navbar collapseOnSelect expand="lg" bg="light" variant="light">
-        <Navbar.Brand href="#home">lahko.ba</Navbar.Brand>
+        <Navbar.Brand href="/kviz">lahko.ba</Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav">
           <i class="fas fa-bars" aria-controls="basic-navbar-nav"></i>
         </Navbar.Toggle>

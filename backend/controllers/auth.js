@@ -3,13 +3,14 @@ const ErrorResponse = require("../utils/errorResponse");
 const posaljiEmail = require("../utils/pošaljiEmail");
 const crypto = require("crypto");
 exports.register = async (req, res, next) => {
-  const { username, email, password, trofeji } = req.body;
+  const { username, email, password, trofeji, odigraniKvizovi } = req.body;
   try {
     const korisnik = await Korisnik.create({
       username,
       email,
       password,
       trofeji,
+      odigraniKvizovi,
     });
     sendToken(korisnik, 201, res);
   } catch (error) {

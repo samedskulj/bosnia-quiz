@@ -56,6 +56,11 @@ const GeneralnoZnanjeGotovo = ({ pitanjeZnanje }) => {
               </Link>
             </>
           )}
+          {counter === 0 && (
+            <Link to="/kviz">
+              <MDBBtn color="dark">Završi sa igrom!</MDBBtn>
+            </Link>
+          )}
         </div>
       </main>
     </>
