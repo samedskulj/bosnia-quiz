@@ -20,7 +20,7 @@ export const historija = [
     odgovor: "Ban Borić",
   },
   {
-    pitanje: "Koje godine je Bosna postala prvi puta nezavisna?",
+    pitanje: "Koje godine je Bosna postala kraljevina?",
     izbori: ["1377", "1209", "1098", "1992"],
     odgovor: "1377",
   },

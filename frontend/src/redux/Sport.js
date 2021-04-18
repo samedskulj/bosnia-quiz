@@ -17,7 +17,7 @@ export const sport = [
   },
   {
     pitanje:
-      "Koje godine je prvi puta BiH nastupila internacionalnom turniru u košarci?",
+      "Koje godine je prvi puta BiH nastupila na internacionalnom turniru u košarci?",
     izbori: ["1995", "1992", "1993", "1999"],
     odgovor: "1993",
   },

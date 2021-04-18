@@ -8,6 +8,7 @@ import KvizVijesti from "./KvizVijesti";
 import KvizZašto from "./KvizZašto";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
 const Kviz = ({ history }) => {
   const [ime, setIme] = useState("");
   const [trofeji, setTrofeji] = useState(0);
@@ -42,44 +43,49 @@ const Kviz = ({ history }) => {
   };
   return (
     <>
-      {error ? <p>{error}</p> : ""}
-
-      <nav>
-        <KvizNavbar logouthandler={logouthandler}></KvizNavbar>
-      </nav>
-      <main className="kviz_main">
-        <div className="kviz_div1">
-          <p
-            style={{ fontWeight: "bold", fontSize: "1.5rem" }}
-            className="kviz_div1_odaberi"
-          >
-            Odaberite svoj kviz
-          </p>
-          <Link id="_link" to="kviz/historija">
-            <MDBBtn id="kviz_btn" color="dark">
-              Historija
-            </MDBBtn>
-          </Link>
-          <br></br>
-          <Link id="_link" to="kviz/generalnoznanje">
-            <MDBBtn id="kviz_btn" color="dark">
-              Generalno znanje{" "}
-            </MDBBtn>
-          </Link>
-          <br></br>
-          <Link id="_link" to="kviz/sport">
-            <MDBBtn id="kviz_btn" color="dark">
-              Sport
-            </MDBBtn>
-          </Link>
-          <br></br>
-        </div>
-        <div id="kviz_slika_velika">
-          <div></div>
-        </div>
-      </main>
-      <KvizVijesti></KvizVijesti>
-      <KvizZašto></KvizZašto>
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 0.3 }}
+      >
+        {error ? <p>{error}</p> : ""}
+        <nav>
+          <KvizNavbar logouthandler={logouthandler}></KvizNavbar>
+        </nav>
+        <main className="kviz_main">
+          <div className="kviz_div1">
+            <p
+              style={{ fontWeight: "bold", fontSize: "1.5rem" }}
+              className="kviz_div1_odaberi"
+            >
+              Odaberite svoj kviz
+            </p>
+            <Link id="_link" to="kviz/historija">
+              <MDBBtn id="kviz_btn" color="dark">
+                Historija
+              </MDBBtn>
+            </Link>
+            <br></br>
+            <Link id="_link" to="kviz/generalnoznanje">
+              <MDBBtn id="kviz_btn" color="dark">
+                Generalno znanje
+              </MDBBtn>
+            </Link>
+            <br></br>
+            <Link id="_link" to="kviz/sport">
+              <MDBBtn id="kviz_btn" color="dark">
+                Sport
+              </MDBBtn>
+            </Link>
+            <br></br>
+          </div>
+          <div id="kviz_slika_velika">
+            <div></div>
+          </div>
+        </main>
+        <KvizVijesti></KvizVijesti>
+        <KvizZašto></KvizZašto>
+      </motion.div>
     </>
   );
 };

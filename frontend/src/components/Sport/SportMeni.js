@@ -3,9 +3,18 @@ import { MDBBtn } from "mdb-react-ui-kit";
 import "./SportMeni.css";
 import { mjenjanjeSport } from "./Sport";
 import { Link } from "react-router-dom";
+import axios from "axios";
+
 const SportMeni = () => {
   const { gameState, setGameState } = useContext(mjenjanjeSport);
-  const mjenjajSportHandler = () => {
+  const mjenjajSportHandler = async () => {
+    const config = {
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${localStorage.getItem("authToken")}`,
+      },
+    };
+    const { data } = await axios.post("/api/private/pocetak", {}, config);
     setGameState("igra");
   };
   return (

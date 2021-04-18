@@ -2,10 +2,13 @@ import React, { useState, useContext, useEffect } from "react";
 import { connect } from "react-redux";
 import { mjenjanjeSport } from "./Sport";
 import "./SportGotovo.css";
+import axios from "axios";
+import { Link } from "react-router-dom";
+import { MDBBtn } from "mdb-react-ui-kit";
 const SportGotovo = ({ pitanjeSport }) => {
   const { odgovori } = useContext(mjenjanjeSport);
   const [counter, setCounter] = useState(0);
-
+  const [trofeji, setTrofeji] = useState(0);
   useEffect(() => {
     let brojac = 0;
     odgovori.forEach((vrijednost, i) => {
@@ -14,8 +17,24 @@ const SportGotovo = ({ pitanjeSport }) => {
         console.log(vrijednost.odgovor);
       }
     });
+    if (brojac === pitanjeSport.length) {
+      setTrofeji(trofeji + 1);
+    }
     setCounter(brojac);
   }, []);
+  const potvrdaTrofeja = async () => {
+    const config = {
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${localStorage.getItem("authToken")}`,
+      },
+    };
+    const { data } = await axios.post(
+      "/api/private/pobjeda",
+      { trofeji },
+      config
+    );
+  };
   console.log(odgovori);
   return (
     <>
@@ -24,6 +43,24 @@ const SportGotovo = ({ pitanjeSport }) => {
           <p>
             Odgovorili ste na {counter} tačnih pitanja od {pitanjeSport.length}
           </p>
+          {counter === pitanjeSport.length && (
+            <>
+              <p>
+                Osvojili ste trofej "znalac", čestitamo. Molimo Vas pritisnite
+                dugme ispod za potvrdu!
+              </p>
+              <Link to="/kviz">
+                <MDBBtn color="dark" onClick={potvrdaTrofeja}>
+                  Završi sa igrom!
+                </MDBBtn>
+              </Link>
+            </>
+          )}
+          {counter < pitanjeSport.length && (
+            <Link to="/kviz">
+              <MDBBtn color="dark">Završi sa igrom!</MDBBtn>
+            </Link>
+          )}
         </div>
       </main>
     </>

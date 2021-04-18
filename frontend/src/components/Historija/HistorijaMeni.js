@@ -3,9 +3,17 @@ import "./HistorijaMeni.css";
 import { MDBBtn } from "mdb-react-ui-kit";
 import { Link } from "react-router-dom";
 import { mjenjanjeHistorija } from "./Historija";
+import axios from "axios";
 const HistorijaMeni = () => {
   const { gameState, setGameState } = useContext(mjenjanjeHistorija);
-  const mjenjajHandler = () => {
+  const mjenjajHandler = async () => {
+    const config = {
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${localStorage.getItem("authToken")}`,
+      },
+    };
+    const { data } = await axios.post("/api/private/pocetak", {}, config);
     setGameState("igra");
   };
   return (
