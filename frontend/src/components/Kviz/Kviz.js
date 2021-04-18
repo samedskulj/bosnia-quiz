@@ -9,7 +9,9 @@ import KvizZašto from "./KvizZašto";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 const Kviz = ({ history }) => {
-  const [privateData, setPrivateData] = useState("");
+  const [ime, setIme] = useState("");
+  const [trofeji, setTrofeji] = useState(0);
+
   const [error, setError] = useState("");
 
   useEffect(() => {
@@ -22,7 +24,8 @@ const Kviz = ({ history }) => {
       };
       try {
         const { data } = await axios.get(`/api/private/`, config);
-        setPrivateData(data.data);
+        setIme(data.ime);
+        setTrofeji(data.trofeji);
       } catch (error) {
         localStorage.removeItem("authToken");
         setError("Nemate pristup ovoj ruti, molimo Vas ulogujte se!");
@@ -40,7 +43,11 @@ const Kviz = ({ history }) => {
   return (
     <>
       {error ? <p>{error}</p> : ""}
-      {privateData && <p>{privateData}</p>}
+      {ime && (
+        <p>
+          {ime}, {trofeji}
+        </p>
+      )}
       <nav>
         <KvizNavbar logouthandler={logouthandler}></KvizNavbar>
       </nav>

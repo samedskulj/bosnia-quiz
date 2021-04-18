@@ -25,6 +25,9 @@ const KorisniciSchema = new mongoose.Schema({
   },
   resetPasswordToken: String,
   resetPasswordExpire: Date,
+  trofeji: {
+    type: Number,
+  },
 });
 
 KorisniciSchema.pre("save", async function (next) {
