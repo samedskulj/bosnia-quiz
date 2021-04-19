@@ -6,10 +6,11 @@ import { mjenjanjeIgre } from "./GeneralnoZnanje";
 import axios from "axios";
 import { MDBBtn } from "mdb-react-ui-kit";
 import { Link } from "react-router-dom";
-const GeneralnoZnanjeGotovo = ({ pitanjeZnanje }) => {
+import { POVEĆAJ_UKUPNO, RESETIRAJ_UKUPNO } from "../../redux/akcije";
+const GeneralnoZnanjeGotovo = ({ pitanjeZnanje, dodaj, izbrisi, trofeji }) => {
   const { odgovori } = useContext(mjenjanjeIgre);
   const [counter, setCounter] = useState(0);
-  const [trofeji, setTrofej] = useState(0);
+
   useEffect(() => {
     let brojac = 0;
     odgovori.forEach((vrijednost, i) => {
@@ -19,12 +20,17 @@ const GeneralnoZnanjeGotovo = ({ pitanjeZnanje }) => {
       }
     });
     if (brojac === pitanjeZnanje.length) {
-      setTrofej(trofeji + 1);
+      dodaj();
     }
     setCounter(brojac);
   }, []);
+
+  console.log(counter);
   console.log(trofeji);
+
   const potvrdaTrofeja = async () => {
+    console.log(trofeji);
+
     const config = {
       headers: {
         "Content-Type": "application/json",
@@ -36,7 +42,9 @@ const GeneralnoZnanjeGotovo = ({ pitanjeZnanje }) => {
       { trofeji },
       config
     );
+    izbrisi();
   };
+  console.log(trofeji);
   console.log(odgovori);
   return (
     <>
@@ -67,6 +75,16 @@ const GeneralnoZnanjeGotovo = ({ pitanjeZnanje }) => {
   );
 };
 const mapStateToProps = (state) => {
-  return { pitanjeZnanje: state.pitanjeZnanje };
+  return { pitanjeZnanje: state.pitanjeZnanje, trofeji: state.trofeji };
 };
-export default connect(mapStateToProps)(GeneralnoZnanjeGotovo);
+const mapDispatchToProps = (dispatch) => {
+  return {
+    dodaj: () => dispatch({ type: POVEĆAJ_UKUPNO }),
+    izbrisi: () => dispatch({ type: RESETIRAJ_UKUPNO }),
+  };
+};
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(GeneralnoZnanjeGotovo);

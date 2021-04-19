@@ -5,11 +5,12 @@ import { connect } from "react-redux";
 import { mjenjanjeHistorija } from "./Historija";
 import axios from "axios";
 import { Link } from "react-router-dom";
+import { POVEĆAJ_UKUPNO, RESETIRAJ_UKUPNO } from "../../redux/akcije";
 import { MDBBtn } from "mdb-react-ui-kit";
-const HistorijaGotovo = ({ pitanjeHistorija }) => {
+const HistorijaGotovo = ({ pitanjeHistorija, dodaj, izbrisi, trofeji }) => {
   const { odgovori } = useContext(mjenjanjeHistorija);
   const [counter, setCounter] = useState(0);
-  const [trofeji, setTrofeji] = useState(0);
+
   useEffect(() => {
     let brojac = 0;
     odgovori.forEach((vrijednost, i) => {
@@ -19,7 +20,7 @@ const HistorijaGotovo = ({ pitanjeHistorija }) => {
       }
     });
     if (brojac === pitanjeHistorija.length) {
-      setTrofeji(trofeji + 1);
+      dodaj();
     }
     setCounter(brojac);
   }, []);
@@ -35,6 +36,7 @@ const HistorijaGotovo = ({ pitanjeHistorija }) => {
       { trofeji },
       config
     );
+    izbrisi();
   };
   return (
     <>
@@ -71,6 +73,13 @@ const HistorijaGotovo = ({ pitanjeHistorija }) => {
 const mapStateToProps = (state) => {
   return {
     pitanjeHistorija: state.pitanjeHistorija,
+    trofeji: state.trofeji,
   };
 };
-export default connect(mapStateToProps)(HistorijaGotovo);
+const mapDispatchToProps = (dispatch) => {
+  return {
+    dodaj: () => dispatch({ type: POVEĆAJ_UKUPNO }),
+    izbrisi: () => dispatch({ type: RESETIRAJ_UKUPNO }),
+  };
+};
+export default connect(mapStateToProps, mapDispatchToProps)(HistorijaGotovo);

@@ -28,7 +28,7 @@ export const generalnoZnanje = [
   {
     pitanje: "Da li Zenica ima više stanovnika od Tuzle?",
     izbori: ["Da", "Ne"],
-    odgovor: "Da",
+    odgovor: "Ne",
   },
   {
     pitanje: "Kada je nastao OSBIH?",

@@ -4,11 +4,12 @@ import { mjenjanjeSport } from "./Sport";
 import "./SportGotovo.css";
 import axios from "axios";
 import { Link } from "react-router-dom";
+import { POVEĆAJ_UKUPNO, RESETIRAJ_UKUPNO } from "../../redux/akcije";
 import { MDBBtn } from "mdb-react-ui-kit";
-const SportGotovo = ({ pitanjeSport }) => {
+const SportGotovo = ({ pitanjeSport, trofeji, dodaj, izbrisi }) => {
   const { odgovori } = useContext(mjenjanjeSport);
   const [counter, setCounter] = useState(0);
-  const [trofeji, setTrofeji] = useState(0);
+
   useEffect(() => {
     let brojac = 0;
     odgovori.forEach((vrijednost, i) => {
@@ -18,10 +19,11 @@ const SportGotovo = ({ pitanjeSport }) => {
       }
     });
     if (brojac === pitanjeSport.length) {
-      setTrofeji(trofeji + 1);
+      dodaj();
     }
     setCounter(brojac);
   }, []);
+
   const potvrdaTrofeja = async () => {
     const config = {
       headers: {
@@ -34,6 +36,7 @@ const SportGotovo = ({ pitanjeSport }) => {
       { trofeji },
       config
     );
+    izbrisi();
   };
   console.log(odgovori);
   return (
@@ -67,6 +70,12 @@ const SportGotovo = ({ pitanjeSport }) => {
   );
 };
 const mapStateToProps = (state) => {
-  return { pitanjeSport: state.pitanjeSport };
+  return { pitanjeSport: state.pitanjeSport, trofeji: state.trofeji };
 };
-export default connect(mapStateToProps)(SportGotovo);
+const mapDispatchToProps = (dispatch) => {
+  return {
+    dodaj: () => dispatch({ type: POVEĆAJ_UKUPNO }),
+    izbrisi: () => dispatch({ type: RESETIRAJ_UKUPNO }),
+  };
+};
+export default connect(mapStateToProps, mapDispatchToProps)(SportGotovo);

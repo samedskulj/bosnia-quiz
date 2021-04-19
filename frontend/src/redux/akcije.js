@@ -1,0 +1,2 @@
+export const POVEĆAJ_UKUPNO = "POVEĆAJ_UKUPNO";
+export const RESETIRAJ_UKUPNO = "RESETIRAJ_UKUPNO";

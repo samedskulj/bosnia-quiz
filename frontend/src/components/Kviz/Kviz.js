@@ -9,7 +9,7 @@ import KvizZašto from "./KvizZašto";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-const Kviz = ({ history }) => {
+const Kviz = ({ history, ukupno }) => {
   const [ime, setIme] = useState("");
   const [trofeji, setTrofeji] = useState(0);
 
@@ -89,7 +89,5 @@ const Kviz = ({ history }) => {
     </>
   );
 };
-const mapStateToProps = (state) => {
-  return { ukupno: state.ukupno };
-};
-export default connect(mapStateToProps)(Kviz);
+
+export default connect()(Kviz);

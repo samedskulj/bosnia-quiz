@@ -23,6 +23,7 @@ exports.getPrivateData = async (req, res, next) => {
   });
 };
 exports.dobitnikTrofeja = async (req, res, next) => {
+  const { trofeji } = req.body;
   let token;
   if (
     req.headers.authorization &&
@@ -33,7 +34,7 @@ exports.dobitnikTrofeja = async (req, res, next) => {
   try {
     const decoded = jwt.verify(token, process.env.JWT_SECRET);
     const user = await Korisnik.findById(decoded.id);
-    user.trofeji += 1;
+    user.trofeji += trofeji;
     await user.save();
     res.status(200).json({
       sucess: true,

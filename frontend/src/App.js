@@ -12,7 +12,7 @@ const initialStore = {
   pitanjeZnanje: generalnoZnanje,
   pitanjeSport: sport,
   pitanjeHistorija: historija,
-  ukupno: 0,
+  trofeji: 0,
 };
 
 const store = createStore(reducer, initialStore);
