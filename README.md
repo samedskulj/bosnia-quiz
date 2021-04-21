@@ -58,7 +58,8 @@ Here is the list of technologies used to make this website
 * Redux
 * Framer Motion
 * MDB Bootstrap
-* React-Bootstrap
+* MongoDB
+* Node, Express
 
 # Fork it!
 
