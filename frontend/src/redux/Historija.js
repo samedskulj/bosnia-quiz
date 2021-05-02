@@ -35,4 +35,37 @@ export const historija = [
     ],
     odgovor: "oko dva miliona",
   },
+  {
+    pitanje: "Kada je potpisan Daytonski Mirovni Sporazum?",
+    izbori: ["1994", "1995", "1993", "1984"],
+    odgovor: "1995",
+  },
+  {
+    pitanje: "Kada je Bosna i Hercegovina dobila svoju nezavisnost?",
+    izbori: ["1999", "1992", "1989", "1995"],
+    odgovor: "1992",
+  },
+  {
+    pitanje:
+      "Sarajevo je bio domaćin Zimskih Olimpijskih Igara. Koje godine se to desilo?",
+    izbori: ["1980", "1992", "1984", "2002"],
+    odgovor: "1984",
+  },
+
+  {
+    pitanje:
+      "Koje bio prvi demokratski izabran predsjenik Bosne i Hercegovine?",
+    izbori: [
+      "Alija Izetbegović",
+      "Halid Genjac",
+      "Haris Silajdžić",
+      "Milorad Dodik",
+    ],
+    odgovor: "Alija Izetbegović",
+  },
+  {
+    pitanje: "Koje godine se desio genoci u Srebrenici?",
+    izbori: ["1992", "1995", "2005", "1974"],
+    odgovor: "1995",
+  },
 ];

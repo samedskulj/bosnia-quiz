@@ -9,7 +9,13 @@ import KvizZašto from "./KvizZašto";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-const Kviz = ({ history, ukupno }) => {
+const Kviz = ({
+  history,
+  ukupno,
+  pitanjeHistorija,
+  pitanjeSport,
+  pitanjeZnanje,
+}) => {
   const [ime, setIme] = useState("");
   const [trofeji, setTrofeji] = useState(0);
 
@@ -41,6 +47,16 @@ const Kviz = ({ history, ukupno }) => {
       history.push("/login");
     }
   };
+
+  const shuffleHistory = () => {
+    pitanjeHistorija = pitanjeHistorija.sort(() => Math.random() - 0.5);
+  };
+  const shuffleSport = () => {
+    pitanjeSport = pitanjeSport.sort(() => Math.random() - 0.5);
+  };
+  const shuffleZnanje = () => {
+    pitanjeZnanje = pitanjeZnanje.sort(() => Math.random() - 0.5);
+  };
   return (
     <>
       <motion.div
@@ -60,19 +76,19 @@ const Kviz = ({ history, ukupno }) => {
             >
               Odaberite svoj kviz
             </p>
-            <Link id="_link" to="kviz/historija">
+            <Link onClick={shuffleHistory} id="_link" to="kviz/historija">
               <MDBBtn id="kviz_btn" color="dark">
                 Historija
               </MDBBtn>
             </Link>
             <br></br>
-            <Link id="_link" to="kviz/generalnoznanje">
+            <Link onClick={shuffleZnanje} id="_link" to="kviz/generalnoznanje">
               <MDBBtn id="kviz_btn" color="dark">
                 Generalno znanje
               </MDBBtn>
             </Link>
             <br></br>
-            <Link id="_link" to="kviz/sport">
+            <Link onClick={shuffleSport} id="_link" to="kviz/sport">
               <MDBBtn id="kviz_btn" color="dark">
                 Sport
               </MDBBtn>
@@ -89,5 +105,11 @@ const Kviz = ({ history, ukupno }) => {
     </>
   );
 };
-
-export default connect()(Kviz);
+const mapStateToProps = (state) => {
+  return {
+    pitanjeHistorija: state.pitanjeHistorija,
+    pitanjeZnanje: state.pitanjeZnanje,
+    pitanjeSport: state.pitanjeSport,
+  };
+};
+export default connect(mapStateToProps)(Kviz);

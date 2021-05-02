@@ -21,11 +21,11 @@ const HistorijaIgra = ({ pitanjeHistorija }) => {
       radiobox.checked = false;
     }
   }, [trenutnoPitanje]);
-
+  console.log(pitanjeHistorija);
   const { gameState, setGameState, odgovori, setOdgovori } = useContext(
     mjenjanjeHistorija
   );
-
+  console.log(pitanjeHistorija);
   const trenutnoPitanjeHandler = () => {
     if (odabran === "") {
       return setError("Molimo Vas odaberite jednu od opcija");

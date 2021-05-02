@@ -4,7 +4,9 @@ import { MDBBtn } from "mdb-react-ui-kit";
 import { Link } from "react-router-dom";
 import { mjenjanjeHistorija } from "./Historija";
 import axios from "axios";
-const HistorijaMeni = () => {
+import { connect } from "react-redux";
+
+const HistorijaMeni = ({ pitanjeHistorija }) => {
   const { gameState, setGameState } = useContext(mjenjanjeHistorija);
   const mjenjajHandler = async () => {
     const config = {
@@ -16,6 +18,7 @@ const HistorijaMeni = () => {
     const { data } = await axios.post("/api/private/pocetak", {}, config);
     setGameState("igra");
   };
+
   return (
     <>
       <main className="historija">
@@ -38,5 +41,9 @@ const HistorijaMeni = () => {
     </>
   );
 };
-
-export default HistorijaMeni;
+const mapStateToProps = (state) => {
+  return {
+    pitanjeHistorija: state.pitanjeHistorija,
+  };
+};
+export default connect(mapStateToProps)(HistorijaMeni);

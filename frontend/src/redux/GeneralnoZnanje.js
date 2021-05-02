@@ -45,4 +45,21 @@ export const generalnoZnanje = [
     ],
     odgovor: "Liberalna demokratija",
   },
+  {
+    pitanje:
+      'U kojem gradu u Bosni i Hercegovini, možete vidjeti "Bosanske Piramide"? ',
+    izbori: ["Visoko", "Kakanj", "Sarajevo", "Livno"],
+    odgovor: "Visoko",
+  },
+  {
+    pitanje: "Gdje se geografski nalazi Bosna i Hercegovina?",
+    izbori: ["Azija", "Južni Balkan", "Zapadni Balkan", "Istočni Balkan"],
+    odgovor: "Zapadni Balkan",
+  },
+  {
+    pitanje:
+      "Kako se zove drevna šuma koja se nalazi u Bosni i Hercegovini, jednoj od posljednje dvije preostale prašume u Evropi?",
+    izbori: ["Balarka", "Peručica", "Sutjeska", "Rakitnica"],
+    odgovor: "Peručica",
+  },
 ];
