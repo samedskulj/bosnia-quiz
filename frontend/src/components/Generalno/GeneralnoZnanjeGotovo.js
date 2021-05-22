@@ -50,7 +50,9 @@ const GeneralnoZnanjeGotovo = ({ pitanjeZnanje, dodaj, izbrisi, trofeji }) => {
     <>
       <main className="genznanje_gotovo">
         <div className="genznanje_gotovo_div">
-          <p>Odgovorili ste na {counter} tačnih pitanja od 7</p>
+          <p>
+            Odgovorili ste na {counter} tačnih pitanja od {pitanjeZnanje.length}
+          </p>
           {counter === pitanjeZnanje.length && (
             <>
               <p>
