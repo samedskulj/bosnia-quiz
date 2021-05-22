@@ -8,6 +8,6 @@ const { protect } = require("../middleware/jwtchecker");
 const router = express.Router();
 
 router.route("/").get(protect, getPrivateData);
-router.route("/pobjeda").post(dobitnikTrofeja);
-router.route("/pocetak").post(pocetakKviza);
+router.route("/pobjeda").post(protect, dobitnikTrofeja);
+router.route("/pocetak").post(protect, pocetakKviza);
 module.exports = router;

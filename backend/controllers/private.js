@@ -5,37 +5,20 @@ const { use } = require("../routes/private");
 require("dotenv").config();
 
 exports.getPrivateData = async (req, res, next) => {
-  let token;
-  if (
-    req.headers.authorization &&
-    req.headers.authorization.startsWith("Bearer")
-  ) {
-    token = req.headers.authorization.split(" ")[1];
-  }
-  const decoded = jwt.verify(token, process.env.JWT_SECRET);
-  const user = await Korisnik.findById(decoded.id);
   res.status(200).json({
     sucess: true,
-    ime: user.username,
-    trofeji: user.trofeji,
-    email: user.email,
-    odigraniKvizovi: user.odigraniKvizovi,
+    ime: req.user.username,
+    trofeji: req.user.trofeji,
+    email: req.user.email,
+    odigraniKvizovi: req.user.odigraniKvizovi,
   });
 };
 exports.dobitnikTrofeja = async (req, res, next) => {
   const { trofeji } = req.body;
-  let token;
-  if (
-    req.headers.authorization &&
-    req.headers.authorization.startsWith("Bearer")
-  ) {
-    token = req.headers.authorization.split(" ")[1];
-  }
+
   try {
-    const decoded = jwt.verify(token, process.env.JWT_SECRET);
-    const user = await Korisnik.findById(decoded.id);
-    user.trofeji += trofeji;
-    await user.save();
+    req.user.trofeji += trofeji;
+    await req.user.save();
     res.status(200).json({
       sucess: true,
       data: "Čestitamo, dobili ste trofej",
@@ -45,18 +28,9 @@ exports.dobitnikTrofeja = async (req, res, next) => {
   }
 };
 exports.pocetakKviza = async (req, res, next) => {
-  let token;
-  if (
-    req.headers.authorization &&
-    req.headers.authorization.startsWith("Bearer")
-  ) {
-    token = req.headers.authorization.split(" ")[1];
-  }
   try {
-    const decoded = jwt.verify(token, process.env.JWT_SECRET);
-    const user = await Korisnik.findById(decoded.id);
-    user.odigraniKvizovi += 1;
-    await user.save();
+    req.user.odigraniKvizovi += 1;
+    await req.user.save();
     res.status(200).json({
       sucess: true,
       data: "Kviz je započeo",
