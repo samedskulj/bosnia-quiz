@@ -3,7 +3,6 @@ import "./OsobineTestova.css";
 import historijaIlustracija from "../slike/undraw_in_thought_gjsf.png";
 import znanjeIlustracija from "../slike/undraw_exams_g4ow.png";
 import sportIlustracija from "../slike/undraw_basketball_agx4.png";
-import { motion } from "framer-motion";
 const OsobineTestova = () => {
   return (
     <>

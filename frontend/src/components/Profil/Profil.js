@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import Navigacija from "../Navigacija";
 import KvizNavbar from "../Kviz/KvizNavbar";
 import "./Profil.css";
 import axios from "axios";

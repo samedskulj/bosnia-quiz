@@ -3,7 +3,6 @@ import React, { useState, useContext, useEffect, useRef } from "react";
 import { connect } from "react-redux";
 
 import { motion, AnimatePresence } from "framer-motion";
-import { mjenjanjeSport } from "../Sport/Sport";
 import { mjenjanjeHistorija } from "./Historija";
 const HistorijaIgra = ({ pitanjeHistorija }) => {
   const [trenutnoPitanje, setTrenutnoPitanje] = useState(0);
@@ -22,9 +21,8 @@ const HistorijaIgra = ({ pitanjeHistorija }) => {
     }
   }, [trenutnoPitanje]);
   console.log(pitanjeHistorija);
-  const { gameState, setGameState, odgovori, setOdgovori } = useContext(
-    mjenjanjeHistorija
-  );
+  const { gameState, setGameState, odgovori, setOdgovori } =
+    useContext(mjenjanjeHistorija);
   console.log(pitanjeHistorija);
   const trenutnoPitanjeHandler = () => {
     if (odabran === "") {

@@ -1,5 +1,3 @@
-import Navigacija from "./components/Navigacija";
-import OpisKviza from "./components/OpisKviza";
 import PočetnaStranica from "./PočetnaStranica";
 import { createStore } from "redux";
 import { generalnoZnanje } from "./redux/GeneralnoZnanje";

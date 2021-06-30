@@ -1,5 +1,4 @@
-import React, { useState } from "react";
-
+import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import ZaboravljenaSifra from "./components/ForgotPass/ZaboravljenaSifra";
 import Login from "./components/Login/Login";
@@ -8,7 +7,6 @@ import KompletnaStranica from "./components/KompletnaStranica";
 import RutaZaKviz from "./RutaZaKviz";
 import Kviz from "./components/Kviz/Kviz";
 import ResetŠifre from "./components/ResetPass/ResetŠifre";
-import { connect } from "react-redux";
 import GeneralnoZnanje from "./components/Generalno/GeneralnoZnanje";
 import Sport from "./components/Sport/Sport";
 import Historija from "./components/Historija/Historija";

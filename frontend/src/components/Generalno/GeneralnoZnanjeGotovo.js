@@ -1,5 +1,4 @@
 import React, { useEffect, useContext, useState } from "react";
-import { motion } from "framer-motion";
 import "./GeneralnoZnanjeGotovo.css";
 import { connect } from "react-redux";
 import { mjenjanjeIgre } from "./GeneralnoZnanje";
