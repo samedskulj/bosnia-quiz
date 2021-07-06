@@ -64,3 +64,7 @@ Here is the list of technologies used to make this website
 # Fork it!
 
 If you want to work on this website, make sure to fork it, make your own branch, and then push it make pull request and everything that goes with it. 
+
+# Update v1.1
+
+* Fixed problem with security. Normalize-url was outdated
