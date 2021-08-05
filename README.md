@@ -22,7 +22,7 @@ After that, you need to run ```npm run dev``` in order to run the both client an
 ### Important
 
 Before all of this, you need to add PORT, JWT Secret, JWT Expire. Also, you need to connect your MongoDB and add the url in the .env file. If you want to use the "forgot password" option
-then you need to also make account on Sendgrid, and add those important information in .env file
+then you need to also make account on Sendgrid, and add those important information in .env file. Make sure you have the correct information in the .env file since it won't work properly if you do not
 
 # Usage
 
