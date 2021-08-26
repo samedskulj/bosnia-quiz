@@ -68,3 +68,7 @@ If you want to work on this website, make sure to fork it, make your own branch,
 # Update v1.1
 
 * Fixed problem with security. Normalize-url was outdated
+
+# Update v.1.2
+
+* Fixed problem with dependencies. Parse-bot was outdated. Version is updated!
