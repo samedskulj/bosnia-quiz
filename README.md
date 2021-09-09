@@ -72,3 +72,7 @@ If you want to work on this website, make sure to fork it, make your own branch,
 # Update v1.2
 
 * Fixed problem with dependencies. Parse-bot was outdated. Version is updated!
+
+# Update v1.3
+
+* Problem with dependencies. Outdated. Problem is fixed
