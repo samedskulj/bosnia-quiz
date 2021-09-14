@@ -71,3 +71,7 @@ If you want to work on this website, make sure to fork it, make your own branch,
 # Update v1.3
 
 * Problem with dependencies. Outdated. Problem is fixed
+
+# API and Routes
+
+The REST Api has been made by myself. No other API's have been used in this web app.
