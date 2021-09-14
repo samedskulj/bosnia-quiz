@@ -52,14 +52,9 @@ Well, name says it all! If you answer all of the question you will get award.
 
 Here is the list of technologies used to make this website
 
-* HTML/CSS
-* JavaScript
-* React JS
-* Redux
-* Framer Motion
-* MDB Bootstrap
-* MongoDB
-* Node, Express
+**Frontend**: HTML, CSS, JavaScript, React JS, Redux, Framer Motion, MDB Bootstrap
+**Backend**: Node, Express JS
+**Database**: MongoDB(NoSQL)
 
 # Fork it!
 
