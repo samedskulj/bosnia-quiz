@@ -72,6 +72,10 @@ If you want to work on this website, make sure to fork it, make your own branch,
 
 * Problem with dependencies. Outdated. Problem is fixed
 
+# Update v1.4
+
+* Perfomance of the website has been significantly changed. Perfomance was around 60% now it is 90% 
+
 # API and Routes
 
 The REST Api has been made by myself. No other API's have been used in this web app.
