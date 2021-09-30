@@ -56,6 +56,9 @@ Here is the list of technologies used to make this website
 **Backend**: Node, Express JS <br />
 **Database**: MongoDB(NoSQL)
 
+# Authentication 
+To secure the site I have used the JWT Authentication.
+
 # Fork it!
 
 If you want to work on this website, make sure to fork it, make your own branch, and then push it make pull request and everything that goes with it. 
