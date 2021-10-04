@@ -1,5 +1,5 @@
 # Lahko.ba
-Quiz website where you can learn a lot more about Bosina itself. This website is made during COVID-19 pandemic, to ensure that students/people are still learning about their beloved country
+Quiz website where you can learn a lot more about Bosnia itself. This website is made during COVID-19 pandemic, to ensure that students/people are still learning about their beloved country
 
 # Why it is made?
 
