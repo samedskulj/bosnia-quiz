@@ -79,6 +79,6 @@ If you want to work on this website, make sure to fork it, make your own branch,
 
 * Perfomance of the website has been significantly changed. Perfomance was around 60% now it is 90% 
 
-# API and Routes
+# API and Routes - Info
 
 The REST Api has been made by myself. No other API's have been used in this web app.
