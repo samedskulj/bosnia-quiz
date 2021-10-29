@@ -54,7 +54,7 @@ Here is the list of technologies used to make this website
 
 **Frontend**: HTML, CSS, JavaScript, React JS, Redux, Framer Motion, MDB Bootstrap <br />
 **Backend**: Node, Express JS <br />
-**Database**: MongoDB(NoSQL)
+**Database**: MongoDB(NoSQL Database)
 
 # Authentication 
 To secure the site I have used the JWT Authentication.
