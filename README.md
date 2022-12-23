@@ -28,7 +28,7 @@ then you need to also make account on Sendgrid, and add those important informat
 
 There are three sections on this website:
 * Main screen - home page
-* Quiz screen
+* Quiz screen - screen where you can see the button for entering the question screen
 * Answering question screen
 
 ### Main screen 
