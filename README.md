@@ -15,7 +15,7 @@ In this paragraph I will try to describe you how to use the app, if you want to 
 
 First, when you clone the repository, you need to install npm
 
-```npm install```
+```npm install``` or ```yarn install```
 
 After that, you need to run ```npm run dev``` in order to run the both client and "backend" servers 
 
