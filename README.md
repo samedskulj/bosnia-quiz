@@ -17,7 +17,7 @@ First, when you clone the repository, you need to install npm
 
 ```npm install``` or ```yarn install```
 
-After that, you need to run ```npm run dev``` in order to run the both client and "backend" servers 
+After that, you need to run ```npm run dev``` or ```yarn dev``` in order to run the both client and "backend" servers 
 
 ### Important
 
