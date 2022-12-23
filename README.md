@@ -27,7 +27,7 @@ then you need to also make account on Sendgrid, and add those important informat
 # Usage
 
 There are three sections on this website:
-* Main screen
+* Main screen - home page
 * Quiz screen
 * Answering question screen
 
